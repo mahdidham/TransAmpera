@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <style type="text/css">
+        table{
+            border-collapse: collapse;
+            padding: 0px;
+        }
+        a:link, a:visited {
+            display: block;
+            font-weight: bold;
+            color: #ffffff;
+            background-color: #F4511E;
+            width: 320px;
+            text-align: center;
+            padding: 20px;
+            text-decoration: none;
+        }
+        p.outset {
+            border-style: outset;
+            border-color: #BF360C;
+            width: 360px;
+            padding: 20px;
+        }
+        a:hover, a:active {
+            background-color: #BF360C;
+        }
+    </style>
+    
+    <!--Form page-->
+    <table bgcolor="#FF8A65" align="center" border="0" width="50%">
+        <tr>
+            <td bgcolor="#F4511E" width="200" height="50" align="center" rowspan="2"><font color="white">Tipe Mobil</font></td>
+            <td width="50" align="center" rowspan="2"><font color="white">:</font></td>
+            <td width="200" align="center">
+                <select name="tipeMobil">
+                    <option value="Bus">AKAP</option>
+                    <option value="mediumBus">Travel</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            
+            <td align="center"><font color="white">*bus Travel bisa antar sampai tempat tujuan</font></td>
+        </tr>
+        <tr>
+            <td bgcolor="#F4511E" height="50" align="center"><font color="white">Kota Asal</font></td>
+            <td align="center"><font color="white">:</font></td>
+            <td align="center">
+                <select name="kota-asal">
+                    <option value="Palembang">Palembang</option>
+                    <option value="Prabumulih">Prabumulih</option>
+                    <option value="Muara Enim">Muara Enim</option>
+                    <option value="Baturaja">Baturaja</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="#F4511E" height="50" align="center"><font color="white">Kota Tujuan</font></td>
+            <td align="center"><font color="white">:</font></td>
+            <td align="center">
+                <select name="kota-tujuan">
+                    <option value="Palembang">Palembang</option>
+                    <option value="Prabumulih">Prabumulih</option>
+                    <option value="Muara Enim">Muara Enim</option>
+                    <option value="Baturaja">Baturaja</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td  bgcolor="#F4511E" height="50" align="center"><font color="white">Tanggal Keberangkatan</font></td>
+            <td align="center"><font color="white">:</font></td>
+            <td align="center">
+                <input type="datetime-local" name="tanggalBerangkat">
+                    </td>
+        </tr>
+        <tr>
+            <td bgcolor="#F4511E" height="50" align="center"><font color="white">Jumlah Penumpang</font></td>
+            <td align="center"><font color="white">:</font></td>
+            <td align="center">
+                <select name="penumpang">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </td>
+        </tr>
+        <tr bgcolor="white">
+            <td colspan="3" height="80">
+                <table border="1" align="center" width="50%" height="50">
+                    <tr>
+                        <td align="center">
+                            <a href="pesantiket.php?page=pendaftaran-pilihjam">cari</a><!--ini pake <a href="index.php?page=pendaftaran-pilihjam">-->
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>	
+    </table>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<html>
+<head>
+	<title></title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="Made with WOW Slider - Create beautiful, responsive image sliders in a few clicks. Awesome skins and animations. Jquery slider" />
+		<link rel="stylesheet" type="text/css" href="engine1/style.css" />
+		<script type="text/javascript" src="engine1/jquery.js"></script>
+</head>
+<body>
+	<style type="text/css">
+	table,tr,td{
+	    border-collapse: collapse;
+	    border-color: #FF7043;
+	    padding: 0px;
+	}
+	</style>
+	<table width="800" align="center">
+		<tr>
+			<td height="200"> <!-- slideshow-->
+				<div id="wowslider-container1">
+				<div class="ws_images"><ul>
+					<li><img src="data1/images/ampera.jpg" alt="ampera" title="ampera" id="wows1_0"/></li>
+					<li><a href="http://wowslider.com"><img src="data1/images/jakabaring.jpg" alt="wowslider" title="jakabaring" id="wows1_1"/></a></li>
+					<li><img src="data1/images/monpera.jpg" alt="monpera" title="monpera" id="wows1_2"/></li>
+				</ul></div>
+				<div class="ws_bullets"><div>
+					<a href="#" title="ampera"><span><img src="data1/tooltips/ampera.jpg" alt="ampera"/>1</span></a>
+					<a href="#" title="jakabaring"><span><img src="data1/tooltips/jakabaring.jpg" alt="jakabaring"/>2</span></a>
+					<a href="#" title="monpera"><span><img src="data1/tooltips/monpera.jpg" alt="monpera"/>3</span></a>
+				</div></div><div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.com/vi">slider</a> by WOWSlider.com v8.5</div>
+				<div class="ws_shadow"></div>
+				</div>	
+				<script type="text/javascript" src="engine1/wowslider.js"></script>
+				<script type="text/javascript" src="engine1/script.js"></script>
+			</td>
+			<tr>
+			<td>&nbsp;</td><!-- spasi kerangka-->
+		</tr>
+		<tr>
+			<td>
+				<!-- tabel cari tiket-->
+				<table border="1" bgcolor="#FF7043" width="800" height="400">
+		<tr>
+			<td>
+				<table border="1" bgcolor="white" width="800" height="300" align="center">
+					<tr>
+						<td>
+							<table border="0" align="center">
+								<tr>
+									<td width="250" height="50"><font size="6" face="Tahoma">1 </font><font size="5" face="Calibri">Tujuan keberangkatan</font></td>
+								</tr>
+								<tr>
+									<td width="250" height="50"><font face="tahoma">Kota Asal :</font></td>
+								</tr>
+								<tr>
+									<td width="250" height="50">
+										<select name="Kotaasal">
+			                    			<option value="pergi">Bukit Besar</option>
+			                    			<option value="pergi">Plaju</option>
+			                    			<option value="pergi">Kenten</option>
+		                				</select>
+									</td>
+								</tr>
+								<tr>
+									<td width="250" height="50" align="center"><font face="tahoma">Ke</font></td>
+								</tr>
+								<tr>
+									<td width="250" height="50"><font face="tahoma">Kota Tujuan :</font></td>
+								</tr>
+								<tr>
+									<td width="250" height="50">
+										<select name="Tujuan">
+						                    <option value="target">Ampera</option>
+						                    <option value="target">Monpera</option>
+						                    <option value="target">Jakabaring</option>
+					                	</select>
+									</td>
+								</tr>
+							</table>
+						</td>
+						<td>
+							<table border="0" align="center">
+								<tr>
+									<td width="250" height="50"><font size="6" face="Tahoma">2 </font><font size="5" face="Calibri">Waktu keberangkatan</font></td>
+								</tr>
+								<tr>
+									<td width="250" height="50"><font face="tahoma">Tanggal Berangkat :</font></td>
+								</tr>
+								<tr>
+									<td width="250" height="50">
+										<input type="datetime-local" name="tglpergi">
+									</td>
+								</tr>
+								<tr>
+									<td width="250" height="50">&nbsp;</td>
+								</tr>
+								<tr>
+									<td width="250" height="50"><font face="tahoma">Tanggal Pulang :</font></td>
+								</tr>
+								<tr>
+									<td width="250" height="50">
+										<input type="datetime-local" name="tglpulang">
+									</td>
+								</tr>
+							</table>
+						</td>
+						<td>
+							<table border="0" align="center" width="250">
+								<tr>
+									<td height="50" colspan="2"><font size="6" face="Tahoma">3 </font><font size="5" face="Calibri">Cari tiket</font></td>
+								</tr>
+								<tr>
+									<td height="50" colspan="2"><font face="tahoma">Jumlah Penumpang :</font></td>
+								</tr>
+								<tr>
+									<td height="50">
+										<font face="tahoma">Dewasa :</font>
+									</td>
+									<td height="50">
+										<input type="number" name="Dewasa" min="1" max="5">
+									</td>
+								</tr>
+								<tr>
+									<td height="50"><font face="tahoma">Anak-Anak :</font></td>
+									<td height="50">
+										<input type="number" name="Anak" min="1" max="5">
+									</td>
+								</tr>
+								<tr>
+									<td height="50"><font face="tahoma">Balita :</font></td>
+									<td height="50">
+										<input type="number" name="Balita" min="1" max="5">
+									</td>
+								</tr>
+								<tr>
+									<td height="50" colspan="2">
+										<table border="1" width="200" height="40" align="center">
+											<tr>
+												<td align="center" bgcolor="#81D4FA"><font face="tahoma">Cari Tiket</font></td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+			</td>
+		</tr>
+		</tr>
+	</table>
+</body>
+</html>
