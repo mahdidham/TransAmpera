@@ -46,6 +46,7 @@
 					<tr>
 						<td>
 							<table border="0" align="center">
+							<form action="prosesCari.php" method="get">
 								<tr>
 									<td width="250" height="50"><font size="6" face="Tahoma">1 </font><font size="5" face="Calibri">Tujuan keberangkatan</font></td>
 								</tr>
@@ -54,10 +55,10 @@
 								</tr>
 								<tr>
 									<td width="250" height="50">
-										<select name="Kotaasal">
-			                    			<option value="pergi">Bukit Besar</option>
-			                    			<option value="pergi">Plaju</option>
-			                    			<option value="pergi">Kenten</option>
+										<select name="Asal">
+			                    			<option value="Palembang">Palembang</option>
+			                    			<option value="Muaraenim">Muaraenim</option>
+			                    			<option value="Prabumulih">Prabumulih</option>
 		                				</select>
 									</td>
 								</tr>
@@ -70,9 +71,9 @@
 								<tr>
 									<td width="250" height="50">
 										<select name="Tujuan">
-						                    <option value="target">Ampera</option>
-						                    <option value="target">Monpera</option>
-						                    <option value="target">Jakabaring</option>
+						                    <option value="Muaraenim">Muaraenim</option>
+						                    <option value="Prabumulih">Prabumulih</option>
+						                    <option value="Lahat">Lahat</option>
 					                	</select>
 									</td>
 								</tr>
@@ -136,7 +137,7 @@
 									<td height="50" colspan="2">
 										<table border="1" width="200" height="40" align="center">
 											<tr>
-												<td align="center" bgcolor="#81D4FA"><font face="tahoma">Cari Tiket</font></td>
+												<td align="center" bgcolor="#81D4FA"><input type="submit" value="Search"></td>
 											</tr>
 										</table>
 									</td>
@@ -151,6 +152,7 @@
 			</td>
 		</tr>
 		</tr>
+		</form>
 	</table>
 </body>
 </html>

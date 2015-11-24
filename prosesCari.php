@@ -64,7 +64,7 @@
 										</td>
 										
 										<td bgcolor="#F4511E" align="center" colspan="2">
-											<a class="one" href="index.php?page=Konfirmasi">Konfirmasi Pembayaran</a>
+											<a class="one" href="index.php?page=pemesanan">Konfirmasi Pembayaran</a>
 										</td>
 										<td bgcolor="#F4511E" align="center" colspan="2">
 											<a class="one" href="index.php?page=kontakkami">Kontak kami</a>
@@ -79,50 +79,47 @@
 			<tr>
 				<td align="center" height="600">
 					<?php
-						if(!isset($_GET['page'])){
-							include('home.html');
-						}
-						else if ($_GET['page'] == 'kontakkami') {
-							include('kontakkami.html');
-						}
-						else if ($_GET['page'] == 'pemesanan') {
-							include('pemesanan.html');
-						}
-						else if ($_GET['page'] == 'jadwal') {
-							include('jadwal.php');
-						}
-						else if ($_GET['page'] == 'listuser') {
-							include('listuser.php');
-						}
-						else if ($_GET['page'] == 'editjadwal') {
-							include('editjadwal.php');
-						}
-						else if ($_GET['page'] == 'editpemesanan') {
-							include('editpemesanan.php');
-						}
-						else if ($_GET['page'] == 'daftarpemesanan') {
-							include('daftarpemesanan.php');
-						}
-						else if ($_GET['page'] == 'daftarpelanggan') {
-							include('daftarpelanggan.php');
-						}
-						else if ($_GET['page'] == 'editUser') {
-							include('editUser.php');
-						}
-						else if ($_GET['page'] == 'admin') {
-							include('admin.html');
-						}
-						else if ($_GET['page'] == 'login') {
-							include('login.html');
-						}
-						else if ($_GET['page'] == 'logout') {
-							include('logout.php');
-						}
-						else{
-							$page=$_GET['page'].".html";
-							include($page);
-						}
-					?>
+		
+		$user="root";
+		$pass="";
+		$host="localhost";
+		$database="transampera";
+		
+		$koneksi=mysql_connect("$host","$user","$pass")or die(mysql_error("Internet anda tidak ada"));
+		$db=mysql_select_db($database) or die(mysql_error());
+		
+		
+		?>
+	<table border="1" align="center">
+		
+		<tr>
+			
+			<td width="300" height="30" align="center">Kelas_Bus</td>
+			<td width="300" height="30" align="center">Asal_Bus</td>
+			<td width="300" height="30" align="center">Tujuan_Bus</td>
+			<td width="300" height="30" align="center">Pesan</td>
+		</tr>
+	
+	<?php
+		$query =  "select * from tb_bus where asal_bus LIKE '%".$_GET['Asal']."%' and tujuan_bus LIKE '%".$_GET['Tujuan']."%'";
+		$hasil = mysql_query($query)or die ('Query Error');
+		
+		while($data =  mysql_fetch_array($hasil))
+		{
+			echo "<tr>
+			
+			<td align='center'>".$data['Kelas_bus']."
+			</td>
+			<td align='center'>".$data['asal_bus']."
+			</td>
+			<td align='center'>".$data['tujuan_bus']."
+			</td>
+			<td align='center'><a class='two' href='index.php?page=pemesanan'>Pesan Tiket</a>
+			</td>
+		</tr>";
+		}
+	?>
+	</table>
 				</td>
 			</tr>	
 		</table>
