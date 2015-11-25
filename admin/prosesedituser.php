@@ -4,13 +4,7 @@
 	{
 		$_SESSION['login']=1;
 
-		$user="root";
-		$pass="";
-		$host="localhost";
-		$database="transampera";
-		
-		$koneksi=mysql_connect("$host","$user","$pass")or die(mysql_error("Internet anda tidak ada"));
-		$db=mysql_select_db($database) or die(mysql_error());
+		include('../configdb.php');
 		
 		$query = "update tb_login set Nama='".$_POST['nama']."',Password='".$_POST['password']."',Status='".$_POST['status']."',Email='".$_POST['email']."' where Username='".$_POST['username']."' ";
 		

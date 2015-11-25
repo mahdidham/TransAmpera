@@ -4,13 +4,7 @@
 	{
 		$_SESSION['login']=1;
 
-		$user="root";
-		$pass="";
-		$host="localhost";
-		$database="transampera";
-		
-		$koneksi=mysql_connect("$host","$user","$pass")or die(mysql_error("Internet anda tidak ada"));
-		$db=mysql_select_db($database) or die(mysql_error());
+		include('../configdb.php');
 		
 		$query = "update tb_destinasi set ID_bus='".$_POST['ID_pesanan']."',Kota_asal='".$_POST['Kota_asal']."',Kota_tujuan='".$_POST['Kota_tujuan']."',
 		Tanggal_berangkat='".$_POST['Tanggal_berangkat']."',Tanggal_pulang='".$_POST['Tanggal_pulang']."',

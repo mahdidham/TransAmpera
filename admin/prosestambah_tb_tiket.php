@@ -3,13 +3,7 @@
 		session_start();
 		$_session['login']=1;
 
-		$user="root";
-		$pass="";
-		$host="localhost";
-		$database="transampera";
-		
-		$koneksi=mysql_connect("$host","$user","$pass")or die(mysql_error("Internet anda tidak ada"));
-		$db=mysql_select_db($database) or die(mysql_error());
+		include('../configdb.php');
 		
 		$query = "select * from tb_tiket where no_tiket = '".$_POST['no_tiket']."'";
 		$hasil = mysql_query($query) or die ('Query Error');
