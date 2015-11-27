@@ -3,7 +3,13 @@
 		session_start();
 		$_session['login']=1;
 
-		include('../configdb.php');
+		$user="root";
+		$pass="";
+		$host="localhost";
+		$database="transampera";
+		
+		$koneksi=mysql_connect("$host","$user","$pass")or die(mysql_error("Internet anda tidak ada"));
+		$db=mysql_select_db($database) or die(mysql_error());
 		
 		$query = "select * from tb_bus where ID_bus = '".$_POST['ID_bus']."'";
 		$hasil = mysql_query($query) or die ('Query Error');
@@ -12,7 +18,7 @@
 		{
 			if($_POST['asal_bus']==$_POST['asal_bus'])
 			{
-				$query = "insert into tb_bus values ('".$_POST['ID_bus']."','".$_POST['Kelas_bus']."','".$_POST['asal_bus']."','".$_POST['tujuan_bus']."');";
+				$query = "insert into tb_bus values ('".$_POST['ID_bus']."','".$_POST['Kelas_bus']."','".$_POST['asal_bus']."','".$_POST['tujuan_bus']."','".$_POST['Harga']."');";
 				
 				$hasil= mysql_query($query)or die('Querry Error');
 				

@@ -109,11 +109,17 @@
 						else if ($_GET['page'] == 'tambah_tb_bus') {
 							include('tambah_tb_bus.html');
 						}
-						else if ($_GET['page'] == 'tb_destinasi') {
-							include('tb_destinasi.php');
+						else if ($_GET['page'] == 'tb_jadwal') {
+							include('tb_jadwal.php');
 						}
-						else if ($_GET['page'] == 'tambah_tb_destinasi') {
-							include('tambah_tb_destinasi.html');
+						else if ($_GET['page'] == 'tambah_tb_jadwal') {
+							include('tambah_tb_jadwal.html');
+						}
+						else if ($_GET['page'] == 'tb_keberangkatan') {
+							include('tb_keberangkatan.php');
+						}
+						else if ($_GET['page'] == 'tambah_tb_keberangkatan') {
+							include('tambah_tb_keberangkatan.html');
 						}
 						else if ($_GET['page'] == 'tb_tiket') {
 							include('tb_tiket.php');
@@ -130,8 +136,11 @@
 						else if ($_GET['page'] == 'edit_tb_bus') {
 							include('edit_tb_bus.php');
 						}
-						else if ($_GET['page'] == 'edit_tb_destinasi') {
-							include('edit_tb_destinasi.php');
+						else if ($_GET['page'] == 'edit_tb_jadwal') {
+							include('edit_tb_jadwal.php');
+						}
+						else if ($_GET['page'] == 'edit_tb_keberangkatan') {
+							include('edit_tb_keberangkatan.php');
 						}
 						else if ($_GET['page'] == 'edit_tb_tiket') {
 							include('edit_tb_tiket.php');

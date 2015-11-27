@@ -4,9 +4,15 @@
 	{
 		$_SESSION['login']=1;
 
-		include('../configdb.php');
+		$user="root";
+		$pass="";
+		$host="localhost";
+		$database="transampera";
 		
-		$query="select * from tb_bus where ID_bus = '".$_GET['ID_bus']."'";
+		$koneksi=mysql_connect("$host","$user","$pass")or die(mysql_error("Internet anda tidak ada"));
+		$db=mysql_select_db($database) or die(mysql_error());
+		
+		$query="select * from tb_bus where no_bus = '".$_GET['no_bus']."'";
 		
 		$hasil=mysql_query($query)or die('query error');
 
@@ -18,35 +24,27 @@
 		<table align="center" border="0">
 		
 		<tr>
-			<td>ID_bus</td>
+			<td>no_bus</td>
 			<td>:</td>
 			<td>
-				<input type="text" name="ID_Bus"
-				value="<?php echo $data['ID_bus']; ?>">
+				<input type="text" name="no_bus"
+				value="<?php echo $data['no_bus']; ?>">
 			</td>
 		</tr>
 		<tr>
-			<td>Kelas_Bus</td>
+			<td>Kapasitas</td>
 			<td>:</td>
 			<td>
-				<input type="text" name="Kelas_Bus"
-				value="<?php echo $data['Kelas_bus']; ?>">
+				<input type="text" name="kapasitas"
+				value="<?php echo $data['kapasitas']; ?>">
 			</td>
 		</tr>
 		<tr>
-			<td>Asal_Bus</td>
+			<td>No Plat</td>
 			<td>:</td>
 			<td>
-				<input type="text" name="Asal_Bus"
-				value="<?php echo $data['asal_bus']; ?>">
-			</td>
-		</tr>
-		<tr>
-			<td>Tujuan_Bus</td>
-			<td>:</td>
-			<td>
-				<input type="text" name="Tujuan_Bus"
-				value="<?php echo $data['tujuan_bus']; ?>">
+				<input type="text" name="plat"
+				value="<?php echo $data['plat']; ?>">
 			</td>
 		</tr>
 		<tr>

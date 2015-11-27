@@ -14,7 +14,10 @@
 					<a class="two" href="index.php?page=tb_bus"><font color="white">tb_bus</font></a>
 				</td>
 				<td width="200" height="40" bgcolor="brown" align="center">
-					<a class="two" href="index.php?page=tb_destinasi"><font color="white">tb_destinasi</font></a>
+					<a class="two" href="index.php?page=tb_jadwal"><font color="white">tb_jadwal</font></a>
+				</td>
+				<td width="200" height="40" bgcolor="brown" align="center">
+					<a class="two" href="index.php?page=tb_keberangkatan"><font color="white">tb_keberangkatan</font></a>
 				</td>
 				<td width="200" height="40" bgcolor="brown" align="center">
 					<a class="two" href="index.php?page=tb_tiket"><font color="white">tb_tiket<font></a>

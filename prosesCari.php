@@ -47,7 +47,7 @@
 								<table border="0" bgcolor="white" align="center">
 									<tr>
 										<td rowspan="2" width="50">
-										<a class="two" href="index.php"><img src="../image/palak.png"></a>
+										<a class="two" href="index.php"><img src="image/palak.png"></a>
 										</td>
 										<td colspan="4" rowspan="2" align="center">
 											<font size="4" face="Cooper black" color="Red"><i>Kamu Pesan, Kami Jemput, Kito Berangkat...</i></font>
@@ -93,28 +93,33 @@
 	<table border="1" align="center">
 		
 		<tr>
-			
-			<td width="300" height="30" align="center">Kelas_Bus</td>
-			<td width="300" height="30" align="center">Asal_Bus</td>
-			<td width="300" height="30" align="center">Tujuan_Bus</td>
-			<td width="300" height="30" align="center">Pesan</td>
+			<th width="300" height="30" align="center">Kota Asal</th>
+			<th width="300" height="30" align="center">Kota Tujuan</th>
+			<th width="300" height="30" align="center">Jam Berangkat</th>
+			<th width="300" height="30" align="center">Harga</th>
+			<th width="300" height="30" align="center">Kursi Tersedia</th>
+			<th width="300" height="30" align="center">Pesan</th>
 		</tr>
 	
 	<?php
-		$query =  "select * from tb_bus where asal_bus LIKE '%".$_GET['Asal']."%' and tujuan_bus LIKE '%".$_GET['Tujuan']."%'";
+		$query =  "select * from tb_keberangkatan where kota_asal LIKE '%".$_GET['Asal']."%' and kota_tujuan LIKE '%".$_GET['Tujuan']."%'
+		and tanggal LIKE '%".$_GET['tglpergi']."%'";
 		$hasil = mysql_query($query)or die ('Query Error');
 		
 		while($data =  mysql_fetch_array($hasil))
 		{
 			echo "<tr>
-			
-			<td align='center'>".$data['Kelas_bus']."
+			<td align='center'>".$data['kota_asal']."
 			</td>
-			<td align='center'>".$data['asal_bus']."
+			<td align='center'>".$data['kota_tujuan']."
 			</td>
-			<td align='center'>".$data['tujuan_bus']."
+			<td align='center'>".$data['jam_berangkat']."
 			</td>
-			<td align='center'><a class='two' href='index.php?page=pemesanan'>Pesan Tiket</a>
+			<td align='center'>".$data['harga']."
+			</td>
+			<td align='center'>NULL
+			</td>
+			<td align='center'><a class='two' href='index.php?page=pemesanan&id_keberangkatan=".$data['id_keberangkatan']."'>Pesan Tiket</a>
 			</td>
 		</tr>";
 		}
@@ -124,13 +129,13 @@
 			</tr>	
 		</table>
 		<br>
-		<table border="0" width="100%" heig>
-			<tr>
-				<td bgcolor="#455A64" align="center">
-					<img src="../image/bayar.png">
-				</td>
-			</tr>
-		</table>
+	<table border="0" width="100%">
+		<tr>
+			<td bgcolor="#455A64" align="center">
+				<img src="image/bayar.png">
+			</td>
+		</tr>
+	</table>
 
 	</body>
 </html>

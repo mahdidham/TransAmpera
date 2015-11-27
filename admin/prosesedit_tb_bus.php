@@ -4,9 +4,15 @@
 	{
 		$_SESSION['login']=1;
 
-		include('../configdb.php');
+		$user="root";
+		$pass="";
+		$host="localhost";
+		$database="transampera";
 		
-		$query = "update tb_bus set ID_bus='".$_POST['ID_Bus']."',Kelas_bus='".$_POST['Kelas_Bus']."',asal_bus='".$_POST['Asal_Bus']."',tujuan_bus='".$_POST['Tujuan_Bus']."' where ID_bus='".$_POST['ID_Bus']."' ";
+		$koneksi=mysql_connect("$host","$user","$pass")or die(mysql_error("Internet anda tidak ada"));
+		$db=mysql_select_db($database) or die(mysql_error());
+		
+		$query = "update tb_bus set no_bus='".$_POST['no_bus']."',kapasitas='".$_POST['kapasitas']."',plat='".$_POST['plat']."' where no_bus='".$_POST['no_bus']."' ";
 		
 		$hasil=mysql_query($query)or die('query error');
 		if($hasil){

@@ -4,7 +4,13 @@
 	{
 		$_SESSION['login']=1;
 
-		include('../configdb.php');
+		$user="root";
+		$pass="";
+		$host="localhost";
+		$database="transampera";
+		
+		$koneksi=mysql_connect("$host","$user","$pass")or die(mysql_error("Internet anda tidak ada"));
+		$db=mysql_select_db($database) or die(mysql_error());
 		
 		$query="select * from tb_tiket where no_tiket = '".$_GET['no_tiket']."'";
 		
@@ -23,14 +29,6 @@
 			<td>
 				<input type="text" name="no_tiket"
 				value="<?php echo $data['no_tiket']; ?>">
-			</td>
-		</tr>
-		<tr>
-			<td>ID_Pesanan</td>
-			<td>:</td>
-			<td>
-				<input type="text" name="ID_pesanan"
-				value="<?php echo $data['ID_pesanan']; ?>">
 			</td>
 		</tr>
 		<tr>
@@ -63,6 +61,22 @@
 			<td>
 				<input type="text" name="telepon"
 				value="<?php echo $data['telepon']; ?>">
+			</td>
+		</tr>
+		<tr>
+			<td>Tanggal</td>
+			<td>:</td>
+			<td>
+				<input type="date" name="tanggal"
+				value="<?php echo $data['tanggal']; ?>">
+			</td>
+		</tr>
+		<tr>
+			<td>Kode Keberangkatan</td>
+			<td>:</td>
+			<td>
+				<input type="text" name="kode_keberangkatan"
+				value="<?php echo $data['kode_keberangkatan']; ?>">
 			</td>
 		</tr>
 		<tr>

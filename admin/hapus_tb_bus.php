@@ -4,9 +4,15 @@
 	{
 		$_SESSION['login']=1;
 
-		include('../configdb.php');
+		$user="root";
+		$pass="";
+		$host="localhost";
+		$database="transampera";
 		
-		$query="delete from tb_bus where ID_bus = '".$_GET['ID_bus']."'";
+		$koneksi=mysql_connect("$host","$user","$pass")or die(mysql_error("Internet anda tidak ada"));
+		$db=mysql_select_db($database) or die(mysql_error());
+		
+		$query="delete from tb_bus where no_bus = '".$_GET['no_bus']."'";
 		
 		$hasil=mysql_query($query)or die('query error');
 		if($hasil)

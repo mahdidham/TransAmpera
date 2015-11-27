@@ -4,7 +4,13 @@
 	{
 		$_SESSION['login']=1;
 
-		include('../configdb.php');
+		$user="root";
+		$pass="";
+		$host="localhost";
+		$database="transampera";
+		
+		$koneksi=mysql_connect("$host","$user","$pass")or die(mysql_error("Internet anda tidak ada"));
+		$db=mysql_select_db($database) or die(mysql_error());
 		
 		$query="select * from tb_login where Username = '".$_GET['Username']."'";
 		
