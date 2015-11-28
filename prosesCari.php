@@ -103,8 +103,8 @@
 	
 	<?php
 		$query =  "select * from tb_keberangkatan where kota_asal LIKE '%".$_GET['Asal']."%' and kota_tujuan LIKE '%".$_GET['Tujuan']."%'
-		and tanggal LIKE '%".$_GET['tglpergi']."%'";
-		$hasil = mysql_query($query)or die ('Query Error');
+            ";
+		$hasil = mysql_query($query)or die (mysql_error());
 		
 		while($data =  mysql_fetch_array($hasil))
 		{

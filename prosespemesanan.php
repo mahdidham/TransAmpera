@@ -95,7 +95,8 @@
 		{
 			if($_POST['no_tiket']==$_POST['no_tiket'])
 			{
-				$query = "insert into tb_tiket values ('".$_POST['no_tiket']."','".$_POST['ID_pesanan']."','".$_POST['Nama']."','".$_POST['KTP']."','".$_POST['Alamat']."','".$_POST['telepon']."');";
+				$query = "insert into tb_tiket values ('".$_POST['no_tiket']."','".$_POST['Nama']."','".$_POST['KTP']."','".$_POST['Alamat']."','".$_POST['telepon']."','".$_POST['Tanggal_berangkat']."','".$_POST['id_keberangkatan']."');
+                ";
 				
 				$hasil= mysql_query($query)or die('Querry Error');
 				
@@ -131,59 +132,13 @@
 		}
 		
 		
-		
-		$query1 = "select * from tb_destinasi where ID_pesanan = '".$_POST['ID_pesanan']."'";
-		$hasil1 = mysql_query($query1) or die ('Query Error');
-		$hitung1 = mysql_num_rows($hasil1);
-		if($hitung1==0)
-		{
-			if($_POST['ID_pesanan']==$_POST['ID_pesanan'])
-			{
-				$query1 = "insert into tb_destinasi values ('".$_POST['ID_pesanan']."','".$_POST['Kota_asal']."','".$_POST['Kota_tujuan']."','".$_POST['Tanggal_berangkat']."','".$_POST['Tanggal_pulang']."','".$_POST['Penumpang_dewasa']."','".$_POST['Penumpang_bayi']."','".$_POST['ID_bus']."');";
 				
-				$hasil1= mysql_query($query1)or die('Querry Error');
-				
-				if($hasil1)
-				{
-					echo "<script>
-							alert('Pemesanan Berhasil');
-						
-				  </script>";
-				}
-				else
-				{
-					echo "<script>
-					alert('Pemesanan Gagal');
-						window.history.back();
-				  </script>";
-				}
-			}
-			else
-			{
-				echo "<script>
-						alert('No ID_pesanan Digunakan');
-						window.history.back();
-				  </script>";
-			}
-		}
-		else
-		{
-			echo "<script>
-						alert('No ID_pesanan Digunakan');
-						window.history.back();
-				  </script>";
-		}
-		
-		
-		
-
-		
 
 $nama=$_POST['Nama'];
-$kode=$_POST['ID_bus'];
-$jumlah1=$_POST['Penumpang_dewasa'];
-$jumlah2=$_POST['Penumpang_bayi'];
-$jumlah=$jumlah1+$jumlah2;
+$kode=$_POST['id_keberangkatan'];
+//$jumlah1=$_POST['Penumpang_dewasa'];
+//$jumlah2=$_POST['Penumpang_bayi'];
+//$jumlah=$jumlah1+$jumlah2;
 $Harga=$_POST['Harga'];
 
 if ($kode=="001")
@@ -216,7 +171,6 @@ $total=$Harga*$jumlah;
 $tgl=date ("d/m/y");
 $jam=date("h:m:s a");
 $kodetiket=$_POST['no_tiket'];
-$nopemesanan=$_POST['ID_pesanan'];
 ?>
 <table border="1">
 <tr><td colspan="3" align="center"><b><br>BUKTI PEMESANAN TIKET BUS TRANSAMPERA<br>&nbsp;</b></td>
@@ -225,21 +179,13 @@ $nopemesanan=$_POST['ID_pesanan'];
 <td><?php echo ":" ?></td>
 <td><?php echo "$kodetiket";?></td>
 </tr>
-<tr>
-<td><?php echo "Kode Pemesanan";?></td>
-<td><?php echo ":" ?></td>
-<td><?php echo "$nopemesanan";?></td>
-</tr>
+
 <tr>
 <td><?php echo "Nama Pemesan";?></td>
 <td><?php echo ":" ?></td>
 <td><?php echo "".$_POST['Nama']."";?></td>
 </tr>
 <tr>
-<td><?php echo "Kode Jurusan";?></td>
-<td><?php echo ":" ?></td>
-<td><?php echo "$kode";?></td>
-</tr>
 <tr>
 <td><?php echo "Jurusan";?></td>
 <td><?php echo ":" ?></td>
@@ -253,12 +199,12 @@ $nopemesanan=$_POST['ID_pesanan'];
 <tr>
 <td><?php echo "Jumlah Tiket Yang Dipesan";?></td>
 <td><?php echo ":" ?></td>
-<td><?php echo "$jumlah";?></td>
+<td><?php echo " ";?></td>
 </tr>
 <tr>
 <td><?php echo "Total Biaya Yang Harus Dibayar";?></td>
 <td><?php echo ":" ?></td>
-<td><?php echo "Rp.$total";?></td>
+<td><?php echo "Rp.0";?></td>
 </tr>
 <tr>
 <td><?php echo "Tanggal Pesan";?></td>

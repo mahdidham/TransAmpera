@@ -92,6 +92,7 @@ $user="root";
     <td><input type="text" name="id_bus"
 				value="<?php echo $data['id_bus']; ?>"></td>
 </tr>
+<input type="hidden" name="id_keberangkatan" value="<?php echo $data['id_keberangkatan']?>">
 <tr>
     <td colspan="2" align="center"><input type="submit" name="bpesan" value="PESAN"><input type="reset" name="bbatal" value="BATAl"></td>
 </tr>
