@@ -11,14 +11,14 @@
 		$koneksi=mysql_connect("$host","$user","$pass")or die(mysql_error("Internet anda tidak ada"));
 		$db=mysql_select_db($database) or die(mysql_error());
 		
-		$query = "select * from tb_bus where ID_bus = '".$_POST['ID_bus']."'";
+		$query = "select * from tb_bus where no_bus = '".$_POST['no_bus']."'";
 		$hasil = mysql_query($query) or die ('Query Error');
 		$hitung = mysql_num_rows($hasil);
 		if($hitung==0)
 		{
-			if($_POST['asal_bus']==$_POST['asal_bus'])
+			if($_POST['no_bus']==$_POST['no_bus'])
 			{
-				$query = "insert into tb_bus values ('".$_POST['ID_bus']."','".$_POST['Kelas_bus']."','".$_POST['asal_bus']."','".$_POST['tujuan_bus']."','".$_POST['Harga']."');";
+				$query = "insert into tb_bus values ('".$_POST['no_bus']."','".$_POST['kapasitas']."','".$_POST['plat']."');";
 				
 				$hasil= mysql_query($query)or die('Querry Error');
 				

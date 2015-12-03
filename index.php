@@ -34,12 +34,16 @@
 		    background-color: transparent;
 		    text-decoration: underline;
 		}
+		#back{
+			box-shadow: 0px 0px 30px black;
+			border-radius: 30px
+		}
 		</style>
 
-		<table border="1" width="1000" align="center" bgcolor="#FFE0B2">
+		<table border="0" width="1000" align="center" bgcolor="#FFE0B2" id="back">
 			<tr>
 				<td>
-					<table border="1" align="center" width="800" height="100">
+					<table border="0" align="center" width="800" height="100">
 						<tr>
 							<td>
 								<table border="0" bgcolor="white" align="center">
@@ -130,9 +134,6 @@
 				<td bgcolor="#455A64" align="center">
 					<img src="image/bayar.png">
 				</td>
-			</tr>
-			<tr bgcolor="grey" height="200">
-			<td></td>
 			</tr>
 		</table>
 

@@ -7,16 +7,27 @@
 		<script type="text/javascript" src="engine1/jquery.js"></script>
 </head>
 <body>
-	<style type="text/css">
+<style type="text/css">
 	table,tr,td{
 	    border-collapse: collapse;
 	    border-color: #FF7043;
 	    padding: 0px;
+	    border-radius: 20px;
+	    
 	}
-	</style>
+	#shadow:hover{
+		box-shadow: 0px 0px 15px black;
+		border-radius: 20px;
+	}
+	#lengkung{
+		border-radius: 20px;
+		border
+	}
+</style>
+<br><br>
 	<table width="800" align="center">
 		<tr>
-			<td height="200"> <!-- slideshow-->
+			<td height="200" id="lengkung"> <!-- slideshow-->
 				<div id="wowslider-container1">
 				<div class="ws_images"><ul>
 					<li><img src="data1/images/ampera.jpg" alt="ampera" title="ampera" id="wows1_0"/></li>
@@ -27,7 +38,7 @@
 					<a href="#" title="ampera"><span><img src="data1/tooltips/ampera.jpg" alt="ampera"/>1</span></a>
 					<a href="#" title="jakabaring"><span><img src="data1/tooltips/jakabaring.jpg" alt="jakabaring"/>2</span></a>
 					<a href="#" title="monpera"><span><img src="data1/tooltips/monpera.jpg" alt="monpera"/>3</span></a>
-				</div></div><div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.com/vi">slider</a> by WOWSlider.com v8.5</div>
+				</div></div><div class="ws_script" style="position:absolute;left:-99%">TransAmpera</div>
 				<div class="ws_shadow"></div>
 				</div>	
 				<script type="text/javascript" src="engine1/wowslider.js"></script>
@@ -39,7 +50,7 @@
 		<tr>
 			<td>
 				<!-- tabel cari tiket-->
-				<table border="1" bgcolor="#FF7043" width="800" height="400">
+				<table border="0" bgcolor="#FF7043" width="800" height="400" id="shadow">
 		<tr>
 			<td>
 				<table border="1" bgcolor="white" width="800" height="300" align="center">
@@ -59,9 +70,9 @@
 			                    			<option value="Palembang">Palembang</option>
 			                    			<option value="Muaraenim">Muaraenim</option>
 			                    			<option value="Prabumulih">Prabumulih</option>
-											<option value="Lahat">Pagaralam</option>
-											  <option value="Lahat">OKI</option>
-											   <option value="Lahat">OKU</option>
+											<option value="Pagaralam">Pagaralam</option>
+											  <option value="OKI">OKI</option>
+											   <option value="OKU">OKU</option>
 		                				</select>
 									</td>
 								</tr>
@@ -78,9 +89,9 @@
 						                    <option value="Muaraenim">Muaraenim</option>
 						                    <option value="Prabumulih">Prabumulih</option>
 						                    <option value="Lahat">Lahat</option>
-											 <option value="Lahat">Pagaralam</option>
-											  <option value="Lahat">OKI</option>
-											   <option value="Lahat">OKU</option>
+											 <option value="Pagaralam">Pagaralam</option>
+											  <option value="OKI">OKI</option>
+											   <option value="OKU">OKU</option>
 					                	</select>
 									</td>
 								</tr>
@@ -102,7 +113,12 @@
 								<tr>
 									<td width="250" height="50">&nbsp;</td>
 								</tr>
-								
+								<tr>
+									<td width="250" height="50">&nbsp;</td>
+								</tr>
+								<tr>
+									<td width="250" height="50">&nbsp;</td>
+								</tr>								
 							</table>
 						</td>
 						<td>
@@ -110,14 +126,22 @@
 								<tr>
 									<td height="50" colspan="2"><font size="6" face="Tahoma">3 </font><font size="5" face="Calibri">Cari tiket</font></td>
 								</tr>
-								
+								<tr>
+									<td width="250" height="50">&nbsp;</td>
+								</tr>
 								<tr>
 									<td height="50" colspan="2" align="center">
-										<input type="submit" value="Search">
-											
-												
-											
+										<input id="shadow" type="submit" value="Search">
 									</td>
+								</tr>
+								<tr>
+									<td width="250" height="50">&nbsp;</td>
+								</tr>
+								<tr>
+									<td width="250" height="50">&nbsp;</td>
+								</tr>
+								<tr>
+									<td width="250" height="50">&nbsp;</td>
 								</tr>
 							</table>
 						</td>
@@ -131,5 +155,6 @@
 		</tr>
 		</form>
 	</table>
+	<br><br><br>
 </body>
 </html>

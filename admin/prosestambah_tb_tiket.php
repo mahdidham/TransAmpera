@@ -18,7 +18,7 @@
 		{
 			if($_POST['no_tiket']==$_POST['no_tiket'])
 			{
-				$query = "insert into tb_tiket values ('".$_POST['no_tiket']."','".$_POST['ID_pesanan']."','".$_POST['Nama']."','".$_POST['KTP']."','".$_POST['Alamat']."','".$_POST['telepon']."');";
+				$query = "insert into tb_tiket values ('".$_POST['no_tiket']."','".$_POST['Nama']."','".$_POST['KTP']."','".$_POST['Alamat']."','".$_POST['telepon']."','".$_POST['tanggal']."','".$_POST['kode_keberangkatan']."');";
 				
 				$hasil= mysql_query($query)or die('Querry Error');
 				

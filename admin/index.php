@@ -36,9 +36,18 @@
 		    background-color: transparent;
 		    text-decoration: underline;
 		}
+		#back{
+			box-shadow: 0px 0px 30px black;
+			border-radius: 20px
+		}
+		#shadow:hover{
+			box-shadow: 0px 0px 30px black;
+			background-color: transparent;
+			border-radius: 20px
+		}
 		</style>
 
-		<table border="1" width="1000" align="center" bgcolor="#FFE0B2">
+		<table border="1" width="1000" align="center" bgcolor="#FFE0B2" id="back">
 			<tr>
 				<td>
 					<table border="1" align="center" width="800" height="100">
@@ -88,8 +97,17 @@
 			<tr>
 				<td align="center" height="600">
 					<?php
-						if(!isset($_GET['page'])){
-							include('administrator.php');
+					
+						if(!isset($_GET['page']))
+						{
+							if(!isset($_SESSION['login']))
+							{
+								include('login-admin.html');
+							}
+							else{
+								
+								include('administrator.php');
+							}
 						}
 						else if ($_GET['page'] == 'kontakkami') {
 							include('kontakkami.html');
@@ -124,6 +142,12 @@
 						else if ($_GET['page'] == 'tb_tiket') {
 							include('tb_tiket.php');
 						}
+						else if ($_GET['page'] == 'tb_konfirmasi') {
+							include('tb_konfirmasi.php');
+						}
+						else if ($_GET['page'] == 'tambah_tb_konfirmasi') {
+							include('tambah_tb_konfirmasi.html');
+						}
 						else if ($_GET['page'] == 'tambah_tb_tiket') {
 							include('tambah_tb_tiket.html');
 						}
@@ -138,6 +162,9 @@
 						}
 						else if ($_GET['page'] == 'edit_tb_jadwal') {
 							include('edit_tb_jadwal.php');
+						}
+						else if ($_GET['page'] == 'edit_tb_konfirmasi') {
+							include('edit_tb_konfirmasi.php');
 						}
 						else if ($_GET['page'] == 'edit_tb_keberangkatan') {
 							include('edit_tb_keberangkatan.php');

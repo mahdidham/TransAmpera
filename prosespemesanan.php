@@ -9,6 +9,7 @@
 	    	border-collapse: collapse;
 	        border-color: #F4511E;
 	        padding: 0px;
+	        border-radius: 20px;
 		}
 		a.one:link, a.one:visited {
 	        display: block;
@@ -34,18 +35,34 @@
 		    background-color: transparent;
 		    text-decoration: underline;
 		}
+		#back{
+			box-shadow: 0px 0px 30px black;
+			border-radius: 20px
+		}
+		#shadow:hover{
+			box-shadow: 0px 0px 30px black;
+			border-radius: 0px
+		}
+		#lengkung{
+		box-shadow: 0px 0px 30px black;
+		border-radius: 20px
+		}
+		#tombol:hover{
+			box-shadow: 0px 0px 15px black;
+			border-radius: 20px
+		}
 		</style>
 
-		<table border="1" width="1000" align="center" bgcolor="#FFE0B2">
+		<table id="back" border="0" width="1000" align="center" bgcolor="#FFE0B2">
 			<tr>
 				<td>
-					<table border="1" align="center" width="800" height="100">
+					<table border="0" align="center" width="800" height="100">
 						<tr>
 							<td>
 								<table border="0" bgcolor="white" align="center">
 									<tr>
 										<td rowspan="2" width="50">
-										<a class="two" href="index.php"><img src="../image/palak.png"></a>
+										<a class="two" href="index.php"><img src="image/palak.png"></a>
 										</td>
 										<td colspan="4" rowspan="2" align="center">
 											<font size="4" face="Cooper black" color="Red"><i>Kamu Pesan, Kami Jemput, Kito Berangkat...</i></font>
@@ -62,7 +79,7 @@
 										</td>
 										
 										<td bgcolor="#F4511E" align="center" colspan="2">
-											<a class="one" href="index.php?page=pemesanan">Konfirmasi Pembayaran</a>
+											<a class="one" href="index.php?page=Konfirmasi">Konfirmasi Pembayaran</a>
 										</td>
 										<td bgcolor="#F4511E" align="center" colspan="2">
 											<a class="one" href="index.php?page=kontakkami">Kontak kami</a>
@@ -88,7 +105,16 @@
 		$koneksi=mysql_connect("$host","$user","$pass")or die(mysql_error("Internet anda tidak ada"));
 		$db=mysql_select_db($database) or die(mysql_error());
 		
-		$query = "select * from tb_tiket where no_tiket = '".$_POST['no_tiket']."'";
+		$query = "select * from 
+		tb_tiket as tt
+		JOIN tb_keberangkatan as tk
+		JOIN tb_bus as tb
+		JOIN tb_jadwal as tj
+		ON
+		tt.kode_keberangkatan=tk.id_keberangkatan=tj.id_keberangkatan
+		and
+		tk.id_bus=tb.no_bus
+		where no_tiket = '".$_POST['no_tiket']."'";
 		$hasil = mysql_query($query) or die ('Query Error');
 		$hitung = mysql_num_rows($hasil);
 		if($hitung==0)
@@ -136,99 +162,109 @@
 
 $nama=$_POST['Nama'];
 $kode=$_POST['id_keberangkatan'];
-//$jumlah1=$_POST['Penumpang_dewasa'];
-//$jumlah2=$_POST['Penumpang_bayi'];
-//$jumlah=$jumlah1+$jumlah2;
 $Harga=$_POST['Harga'];
-
-if ($kode=="001")
-   {
-       $jurusan="Palembang-Muaraenim";
-       $biaya=40000;
-       }
-else if ($kode=="002")
-     {
-       $jurusan="Palembang-Prabumulih";
-       $biaya=25000;  }
-else if ($kode=="003")
-     {
-       $jurusan="Palembang-Lahat";
-       $biaya=65000;  }
-else if ($kode=="004")
-     {
-       $jurusan="Palembang-Pagaralam";
-       $biaya=80000;  }
-else if ($kode=="005")
-     {
-       $jurusan="Palembang-OKI";
-       $biaya=95000;  }
-else
-      {
-       $jurusan="Palembang-OKU";
-       $biaya=100000;  }
+$asal=$_POST['Kota_asal'];
+$tujuan=$_POST['Kota_tujuan'];
+$jumlah=1;
       
-$total=$Harga*$jumlah;
+$total=$Harga;
 $tgl=date ("d/m/y");
 $jam=date("h:m:s a");
 $kodetiket=$_POST['no_tiket'];
-?>
-<table border="1">
-<tr><td colspan="3" align="center"><b><br>BUKTI PEMESANAN TIKET BUS TRANSAMPERA<br>&nbsp;</b></td>
-<tr>
-<td><?php echo "Kode Tiket";?></td>
-<td><?php echo ":" ?></td>
-<td><?php echo "$kodetiket";?></td>
-</tr>
 
-<tr>
-<td><?php echo "Nama Pemesan";?></td>
-<td><?php echo ":" ?></td>
-<td><?php echo "".$_POST['Nama']."";?></td>
-</tr>
-<tr>
-<tr>
-<td><?php echo "Jurusan";?></td>
-<td><?php echo ":" ?></td>
-<td><?php echo "$jurusan";?></td>
-</tr>
-<tr>
-<td><?php echo "Biaya Tiket";?></td>
-<td><?php echo ":" ?></td>
-<td><?php echo "Rp.$Harga";?></td>
-</tr>
-<tr>
-<td><?php echo "Jumlah Tiket Yang Dipesan";?></td>
-<td><?php echo ":" ?></td>
-<td><?php echo " ";?></td>
-</tr>
-<tr>
-<td><?php echo "Total Biaya Yang Harus Dibayar";?></td>
-<td><?php echo ":" ?></td>
-<td><?php echo "Rp.0";?></td>
-</tr>
-<tr>
-<td><?php echo "Tanggal Pesan";?></td>
-<td><?php echo ":" ?></td>
-<td><?php echo "$tgl";?></td>
-</tr>
-<tr>
-<td><?php echo "Jam";?></td>
-<td><?php echo ":" ?></td>
-<td><?php echo "$jam";?></td>
-</tr>
-<tr>
-<td colspan="3" align="center">
-	<input type="submit" value="Simpan/Cetak"></td>
-</tr>	
+?>
+<table align="center" id="lengkung" border="0" width="450">
+	<tr>
+		<td>
+		<form action="convert.php" method="POST">
+		<table align="center" border="0" width="400">
+			<tr>
+				<td bgcolor="#F4511E" colspan="3" align="center"><b><br><font color="white" size="3">BUKTI PEMESANAN TIKET BUS TRANSAMPERA</font><br>&nbsp;</b></td>
+			</tr>
+			<tr>
+				<td><?php echo "Kode Tiket";?></td>
+				<td><?php echo ":" ?></td>
+				<td><?php echo $_POST['no_tiket']; ?><input type="hidden" name="no_tiket" value=<?php echo $_POST['no_tiket']; ?>></td>
+			</tr>
+			<tr>
+				<td><?php echo "Nama Pemesan";?></td>
+				<td><?php echo ":" ?></td>
+				<td><?php echo "".$_POST['Nama']."";?></td>
+			</tr>
+			<tr>
+				<td><?php echo "Kode Keberangkatan";?></td>
+				<td><?php echo ":" ?></td>
+				<td><?php echo "$kode";?></td>
+			</tr>
+			<tr>
+				<td><?php echo "Tanggal Berangkat";?></td>
+				<td><?php echo ":" ?></td>
+				<td><?php echo "".$_POST['Tanggal_berangkat']."";?></td>
+			</tr>
+			<tr>
+				<td><?php echo "Jam Berangkat";?></td>
+				<td><?php echo ":" ?></td>
+				<td><?php echo "".$_POST['jam_berangkat']."";?></td>
+			</tr>
+			<tr>
+				<td><?php echo "Dari";?></td>
+				<td><?php echo ":" ?></td>
+				<td><?php echo "$asal";?></td>
+			</tr>
+			<tr>
+				<td><?php echo "Ke";?></td>
+				<td><?php echo ":" ?></td>
+				<td><?php echo "$tujuan";?></td>
+			</tr>
+			<tr>
+				<td><?php echo "Biaya Tiket";?></td>
+				<td><?php echo ":" ?></td>
+				<td><?php echo "Rp.$Harga";?></td>
+			</tr>
+			<tr>
+				<td><?php echo "Jumlah Tiket Yang Dipesan";?></td>
+				<td><?php echo ":" ?></td>
+				<td><?php echo "$jumlah";?></td>
+			</tr>
+			<tr>
+				<td><?php echo "Total Biaya Yang Harus Dibayar";?></td>
+				<td><?php echo ":" ?></td>
+				<td><?php echo "Rp.$total";?></td>
+			</tr>
+			<tr>
+				<td><?php echo "Tanggal Pesan";?></td>
+				<td><?php echo ":" ?></td>
+				<td><?php echo "$tgl";?></td>
+			</tr>
+			<tr>
+				<td><?php echo "Jam";?></td>
+				<td><?php echo ":" ?></td>
+				<td><?php echo "$jam";?></td>
+			</tr>
+			<tr>
+				<td>
+					&nbsp;
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center">
+					<input id="tombol" type="submit" value="Simpan/Cetak">
+				</td>
+			</tr>	
+		</form>
 		</table>
+		</td>
+	</tr>
+</table>
+
 				</td>
 			</tr>	
 		</table>
 		<br>
-		<table border="0" width="100%" heig>
+		<table border="0" width="100%">
 			<tr>
 				<td bgcolor="#455A64" align="center">
-					<img src="../image/bayar.png">
+					<img src="image/bayar.png">
 				</td>
 			</tr>
 		</table>
