@@ -96,11 +96,14 @@
 				<?php
 						$a = (rand()%9);
 						$b = (rand()%9);
-						$c = (rand()%9);	
+						$c = (rand()%9);
+                        include("configdb.php");
+                    /*
 						$user="root";
 						$pass="";
 						$host="localhost";
 						$database="transampera";
+                    */
 							
 						$koneksi=mysql_connect("$host","$user","$pass")or die(mysql_error("Internet anda tidak ada"));
 						$db=mysql_select_db($database) or die(mysql_error());

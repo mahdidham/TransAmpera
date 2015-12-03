@@ -8,7 +8,8 @@
 
 
 <?php
-
+    include("configdb.php");
+        /*
 		$user="root";
 		$pass="";
 		$host="localhost";
@@ -16,7 +17,7 @@
 		
 		$koneksi=mysql_connect("$host","$user","$pass")or die(mysql_error("Internet anda tidak ada"));
 		$db=mysql_select_db($database) or die(mysql_error());
-		
+		*/
 		$query="select * from tb_bus,tb_destinasi,tb_tiket where tb_bus.ID_bus = 'tb_bus.".['ID_bus']."' and tb_destinasi.ID_pesanan='tb_destinasi.".['ID_pesanan']."' and tb_tiket.no_tiket='tb_tiket.".['no_tiket']."' ;";
 		$hasil = mysql_query($query)or die(mysql_error());
 		$data= mysql_fetch_array($hasil);

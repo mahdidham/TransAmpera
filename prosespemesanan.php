@@ -96,11 +96,13 @@
 				
 		<?php
 			
-
+        /*
 		$user="root";
 		$pass="";
 		$host="localhost";
 		$database="transampera";
+        */
+        include("configdb.php");
 		
 		$koneksi=mysql_connect("$host","$user","$pass")or die(mysql_error("Internet anda tidak ada"));
 		$db=mysql_select_db($database) or die(mysql_error());

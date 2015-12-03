@@ -1,11 +1,11 @@
 <?PHP
  
 //EDIT YOUR MySQL Connection Info:
-$DB_Server = "localhost";        //your MySQL Server
-$DB_Username = "root";                 //your MySQL User Name
-$DB_Password = "";                //your MySQL Password
+$DB_Server = "br-cdbr-azure-south-a.cloudapp.net";        //your MySQL Server
+$DB_Username = "be403f13277093";                 //your MySQL User Name
+$DB_Password = "704d78d8";                //your MySQL Password
 $DB_DBName = "transampera";                //your MySQL Database Name
-$DB_TBLName = "tb_konfirmasi";                //your MySQL Table Name
+$DB_TBLName = "tb_tiket";                //your MySQL Table Name
  
 //$DB_TBLName,  $DB_DBName, may also be commented out & passed to the browser
 //as parameters in a query string, so that this code may be easily reused for
